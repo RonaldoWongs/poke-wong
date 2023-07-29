@@ -1,0 +1,352 @@
+/*navbar*/
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+  box-shadow: 4px 4px 8px #fffb0420;
+  position: sticky;
+  /* Cambiar a position: sticky */
+  top: 0;
+  /* Establecer el Navbar en la parte superior de la pantalla */
+  width: 100%;
+  /* Establecer el ancho del Navbar al 100% */
+  z-index: 100;
+  /* Asegurarse de que el Navbar esté por encima de otros elementos */
+  transition: top 0.3s;
+  /* Agregar una transición para suavizar el desplazamiento */
+  background: rgb(245, 255, 0);
+  background: radial-gradient(circle, rgba(245, 255, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+
+nav>svg {
+  height: 5.0rem;
+  width: auto;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.switch>svg {
+  height: 1.5rem;
+  width: auto;
+}
+
+.switch>label {
+  background-color: #ccc;
+  width: 4rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.slider {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+.check-switch:checked+.slider {
+  transform: translateX(2.5rem);
+}
+
+/*pokemones*/
+
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 17px;
+  padding: 13px;
+  max-width: 1200px;
+  margin: 1rem auto;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background-color: var(--card);
+  padding: 5px 0;
+  box-shadow: 4px 4px 4px #21212120;
+  cursor: pointer;
+  transition: 0.2s;
+  background: rgb(245, 255, 0);
+  background: radial-gradient(circle, rgba(245, 255, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.pokemon-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px 0 #21212170;
+}
+
+.pokemon-imagen {
+  width: 150px;
+  height: 160px;
+  margin: 5px 0;
+}
+
+.pokemon-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3a3c3f;
+  color: #eee;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 4px 8px;
+  border-radius: 10px;
+  width: 50%;
+}
+
+/*detalles*/
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  place-items: center;
+  transition: all 0.2s;
+  z-index: 1;
+  margin-top: 55px;
+}
+
+.modal-body {
+  background-color: var(--back);
+  width: 40%;
+  min-width: 400px;
+  border-radius: 10px;
+  position: absolute;
+  padding: 1rem;
+  display: flex;
+  background: rgb(25, 252, 255);
+  background: linear-gradient(0deg, rgba(25, 252, 255, 1) 0%, rgba(198, 141, 20, 1) 100%);
+}
+
+.imagen-container {
+  display: grid;
+  place-items: center;
+}
+
+.imagen-detalle {
+  width: 200px;
+  aspect-ratio: 8/10;
+}
+
+.tag {
+  background-color: rgb(121, 11, 11);
+  color: #f2f2f2;
+  padding: 4px 6px;
+  margin-right: 5px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.data {
+  display: grid;
+  padding: 0 .5rem;
+  gap: 10px;
+  flex: 1;
+}
+
+.data .titulo {
+  margin: 0;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.titulo-seccion {
+  font-weight: 500;
+}
+
+.data section {
+  background-color: var(--card);
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 4px 4px 4px #21212120;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.stats>section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.puntos {
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+}
+
+/*cargando*/
+
+.cargando {
+  border: 5px solid #e2e2e2;
+  border-top-color: #26e;
+  border-right-color: #26e;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  animation: spiner 1s linear infinite;
+  grid-column: 1 / 6;
+  margin: 0 auto;
+}
+
+@keyframes spiner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*buscador*/
+
+.titulo {
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-shadow: 2px 2px 4px rgba(253, 228, 0, 0.5);
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.container-buscar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.input-buscar {
+  background-color: var(--card);
+  color: var(--text);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px;
+  flex: .4;
+  font-size: 16px;
+  box-shadow: 4px 4px 16px #00000020;
+}
+
+.btn-buscar {
+  background-color: #26e;
+  color: #f2f2f2;
+  border-radius: 10px;
+  padding: 12px;
+  border: none;
+  box-shadow: 4px 4px 16px #00000020;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.btn-buscar>svg {
+  width: 18px;
+  fill: #f2f2f2;
+}
+
+.btn-buscar:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.btn-buscar:focus {
+  border: none;
+}
+
+/*login*/
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 50px;
+}
+
+.login-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.login-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #464646;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding-right: 10px;
+}
+
+.login-button:hover {
+  background-color: rgb(255, 0, 0);
+}
+
+
+.welcome {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
